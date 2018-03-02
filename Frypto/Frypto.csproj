@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201803021347364_SeedPassengerData.Designer.cs">
       <DependentUpon>201803021347364_SeedPassengerData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803021419429_AddAgentModel.cs" />
+    <Compile Include="Migrations\201803021419429_AddAgentModel.Designer.cs">
+      <DependentUpon>201803021419429_AddAgentModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -168,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803021347364_SeedPassengerData.resx">
       <DependentUpon>201803021347364_SeedPassengerData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803021419429_AddAgentModel.resx">
+      <DependentUpon>201803021419429_AddAgentModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
