@@ -1,18 +1,17 @@
+using Frypto.Core.Persistences;
+
 namespace Frypto.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Frypto.Models.FryptoDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<FryptoDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Frypto.Models.FryptoDbContext context)
+        protected override void Seed(FryptoDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

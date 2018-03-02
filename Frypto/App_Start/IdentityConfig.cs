@@ -1,4 +1,5 @@
-﻿using Frypto.Models;
+﻿using Frypto.Core.Models;
+using Frypto.Core.Persistences;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;

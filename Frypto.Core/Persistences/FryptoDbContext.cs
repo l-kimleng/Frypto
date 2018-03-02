@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using System.Data.Entity;
+using Frypto.Core.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Frypto.Models
+namespace Frypto.Core.Persistences
 {
     public class FryptoDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Passenger> Passengers { get; set; }
+
         public FryptoDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection", false)
         {
         }
         

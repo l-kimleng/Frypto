@@ -1,5 +1,5 @@
 ﻿using System;
-using Frypto.Models;
+using Frypto.Core.Persistences;
 using Frypto.Providers;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;

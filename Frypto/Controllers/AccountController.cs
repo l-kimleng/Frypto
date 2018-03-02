@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using System.Net.Http;
 using Frypto.BindingModels;
-using Frypto.Models;
 using Microsoft.AspNet.Identity;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Frypto.Core.Models;
 using Microsoft.AspNet.Identity.Owin;
 
 namespace Frypto.Controllers

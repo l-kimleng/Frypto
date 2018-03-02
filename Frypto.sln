@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frypto", "Frypto\Frypto.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frypto.Tests", "Frypto.Tests\Frypto.Tests.csproj", "{20F6F6E7-2645-4C4A-9772-06253B727935}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frypto.Core", "Frypto.Core\Frypto.Core.csproj", "{DFCA7D07-B619-453E-A2D3-9B697440BA11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{20F6F6E7-2645-4C4A-9772-06253B727935}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20F6F6E7-2645-4C4A-9772-06253B727935}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20F6F6E7-2645-4C4A-9772-06253B727935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFCA7D07-B619-453E-A2D3-9B697440BA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFCA7D07-B619-453E-A2D3-9B697440BA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFCA7D07-B619-453E-A2D3-9B697440BA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFCA7D07-B619-453E-A2D3-9B697440BA11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
