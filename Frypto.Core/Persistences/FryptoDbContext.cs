@@ -8,6 +8,7 @@ namespace Frypto.Core.Persistences
     {
         public DbSet<Passenger> Passengers { get; set; }
         public DbSet<Agent> Agents { get; set; }
+        public DbSet<TravelClass> TravelClasses { get; set; }
 
         public FryptoDbContext()
             : base("DefaultConnection", false)
