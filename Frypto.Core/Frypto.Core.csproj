@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Models\Agent.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\ItineraryReservation.cs" />
     <Compile Include="Models\Passenger.cs" />
     <Compile Include="Models\TravelClass.cs" />
     <Compile Include="Persistences\FryptoDbContext.cs" />
