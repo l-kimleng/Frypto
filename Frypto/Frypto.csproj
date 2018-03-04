@@ -163,6 +163,10 @@
     <Compile Include="Migrations\201803031231566_AddItineraryReservationModel.Designer.cs">
       <DependentUpon>201803031231566_AddItineraryReservationModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803040830224_SeedReservationData.cs" />
+    <Compile Include="Migrations\201803040830224_SeedReservationData.Designer.cs">
+      <DependentUpon>201803040830224_SeedReservationData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -209,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803031231566_AddItineraryReservationModel.resx">
       <DependentUpon>201803031231566_AddItineraryReservationModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803040830224_SeedReservationData.resx">
+      <DependentUpon>201803040830224_SeedReservationData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
