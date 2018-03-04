@@ -63,7 +63,9 @@
     <Compile Include="Models\TravelClass.cs" />
     <Compile Include="Persistences\FryptoDbContext.cs" />
     <Compile Include="Persistences\Repositories\IItineraryReservationRepository.cs" />
+    <Compile Include="Persistences\Repositories\IReservationPaymentRepository.cs" />
     <Compile Include="Persistences\Repositories\ItineraryReservationRepository.cs" />
+    <Compile Include="Persistences\Repositories\ReservationPaymentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
