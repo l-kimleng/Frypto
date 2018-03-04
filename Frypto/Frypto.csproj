@@ -167,6 +167,10 @@
     <Compile Include="Migrations\201803040830224_SeedReservationData.Designer.cs">
       <DependentUpon>201803040830224_SeedReservationData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803040849059_AddPaymentStatusModel.cs" />
+    <Compile Include="Migrations\201803040849059_AddPaymentStatusModel.Designer.cs">
+      <DependentUpon>201803040849059_AddPaymentStatusModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -216,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803040830224_SeedReservationData.resx">
       <DependentUpon>201803040830224_SeedReservationData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803040849059_AddPaymentStatusModel.resx">
+      <DependentUpon>201803040849059_AddPaymentStatusModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -57,6 +57,8 @@
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ItineraryReservation.cs" />
     <Compile Include="Models\Passenger.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PaymentStatus.cs" />
     <Compile Include="Models\TravelClass.cs" />
     <Compile Include="Persistences\FryptoDbContext.cs" />
     <Compile Include="Persistences\Repositories\IItineraryReservationRepository.cs" />
