@@ -19,7 +19,7 @@ namespace Frypto
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { controller = "Account", action="Index", id = RouteParameter.Optional }
+                defaults: new { id = RouteParameter.Optional }
             );
         }
     }
