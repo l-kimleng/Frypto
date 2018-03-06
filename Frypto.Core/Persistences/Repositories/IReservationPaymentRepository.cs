@@ -10,5 +10,6 @@ namespace Frypto.Core.Persistences.Repositories
     public interface IReservationPaymentRepository
     {
         Task Add(ReservationPayment payment);
+        Task<ReservationPayment> Get(int id, bool isIncludeRelated = true);
     }
 }

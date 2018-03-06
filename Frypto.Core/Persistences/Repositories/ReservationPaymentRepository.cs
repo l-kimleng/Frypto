@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,19 @@ namespace Frypto.Core.Persistences.Repositories
             _context.ReservationPayments.Add(payment);
 
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<ReservationPayment> Get(int id, bool isIncludeRelated = true)
+        {
+            var result = _context.ReservationPayments.Where(x => x.Id == id);
+
+            if (isIncludeRelated)
+            {
+                result = result.Include(x => x.Payment)
+                    .Include(x => x.Reservation);
+            }
+
+            return await result.FirstOrDefaultAsync();
         }
     }
 }
