@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using Frypto.Core.Models;
@@ -29,10 +30,31 @@ namespace Frypto.Core.Persistences.Repositories
             {
                 result = result.Include(x => x.Agent)
                     .Include(x => x.Passenger)
-                    .Include(x => x.TravelClass);
+                    .Include(x => x.TravelClass)
+                    .Include(x => x.TicketType);
             }
 
             return await result.FirstOrDefaultAsync();
+        }
+
+        public async Task<IList<ItineraryReservation>> GetByQuery(string query, bool isInclude = true)
+        {
+            var result = _context.ItineraryReservations.AsQueryable();
+
+            if (!string.IsNullOrEmpty(query))
+            {
+               
+            }
+
+            if (isInclude)
+            {
+                result = result.Include(x => x.Agent)
+                    .Include(x => x.Passenger)
+                    .Include(x => x.TravelClass)
+                    .Include(x => x.TicketType);
+            }
+
+            return await result.ToListAsync();
         }
     }
 }

@@ -64,37 +64,40 @@ namespace Frypto.Controllers
             await ItineraryReservationRepository.Add(reservation);
 
             var result = await ItineraryReservationRepository.Get(reservation.Id);
-            
-            var reservationViewModel = new ReservationViewModel
+
+            return Ok(BuildViewModel(result));
+        }
+
+        private static ReservationViewModel BuildViewModel(ItineraryReservation model)
+        {
+            return new ReservationViewModel
             {
-                Id = result.Id,
+                Id = model.Id,
                 Agent = new AgentViewModel
                 {
-                    Id = result.AgentId,
-                    Name = result.Agent.Name,
-                    Description = result.Agent.Description
+                    Id = model.AgentId,
+                    Name = model.Agent.Name,
+                    Description = model.Agent.Description
                 },
                 Passenger = new PassengerViewModel
                 {
-                    Id = result.PassengerId,
-                    FirstName = result.Passenger.FirstName,
-                    LastName = result.Passenger.LastName,
-                    PhoneNumber = result.Passenger.PhoneNumber,
-                    Address = result.Passenger.Address,
-                    City = result.Passenger.City,
-                    Email = result.Passenger.Email,
-                    Country = result.Passenger.Country
+                    Id = model.PassengerId,
+                    FirstName = model.Passenger.FirstName,
+                    LastName = model.Passenger.LastName,
+                    PhoneNumber = model.Passenger.PhoneNumber,
+                    Address = model.Passenger.Address,
+                    City = model.Passenger.City,
+                    Email = model.Passenger.Email,
+                    Country = model.Passenger.Country
                 },
                 TravelClass = new TravelClassViewModel
                 {
-                    Id = result.TravelClassId,
-                    Class = result.TravelClass.Class
+                    Id = model.TravelClassId,
+                    Class = model.TravelClass.Class
                 },
-                NumberInParty = result.NumberInParty,
-                ReservationDate = result.ReservationDate
+                NumberInParty = model.NumberInParty,
+                ReservationDate = model.ReservationDate
             };
-
-            return Ok(reservationViewModel);
         }
     }
 }
