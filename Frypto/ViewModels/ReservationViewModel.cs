@@ -10,5 +10,6 @@ namespace Frypto.ViewModels
         public TravelClassViewModel TravelClass { get; set; }
         public DateTime ReservationDate { get; set; }
         public byte NumberInParty { get; set; }
+        public TicketTypeViewModel TicketTypeViewModel { get; set; }
     }
 }

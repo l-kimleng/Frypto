@@ -44,6 +44,21 @@ namespace Frypto.Controllers
             base.Dispose(disposing);
         }
 
+        [HttpGet]
+        public async Task<IHttpActionResult> GetReservation(string query)
+        {
+            var result = await ItineraryReservationRepository.GetByQuery(query);
+            var list = new List<ReservationViewModel>();
+
+            foreach (var reservation in result)
+            {
+                list.Add(BuildViewModel(reservation));
+              
+            }
+
+            return Ok(list);
+        }
+
         [HttpPost]
         public async Task<IHttpActionResult> CreateReservation(ReservationBindingModel model)
         {
@@ -94,6 +109,11 @@ namespace Frypto.Controllers
                 {
                     Id = model.TravelClassId,
                     Class = model.TravelClass.Class
+                },
+                TicketTypeViewModel = new TicketTypeViewModel
+                {
+                    Id = model.TicketTypeId,
+                    Name = model.TicketType.Name
                 },
                 NumberInParty = model.NumberInParty,
                 ReservationDate = model.ReservationDate
