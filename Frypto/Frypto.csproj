@@ -192,6 +192,10 @@
     <Compile Include="Migrations\201803040905008_AddReservationPaymentModel.Designer.cs">
       <DependentUpon>201803040905008_AddReservationPaymentModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803160608134_AddTicketTypeModel.cs" />
+    <Compile Include="Migrations\201803160608134_AddTicketTypeModel.Designer.cs">
+      <DependentUpon>201803160608134_AddTicketTypeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -255,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803040905008_AddReservationPaymentModel.resx">
       <DependentUpon>201803040905008_AddReservationPaymentModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803160608134_AddTicketTypeModel.resx">
+      <DependentUpon>201803160608134_AddTicketTypeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

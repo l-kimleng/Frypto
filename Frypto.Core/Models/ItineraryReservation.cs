@@ -22,5 +22,8 @@ namespace Frypto.Core.Models
         public DateTime ReservationDate { get; set; }
         public byte NumberInParty { get; set; }
 
+        public int? TicketTypeId { get; set; }
+        public TicketType TicketType { get; set; }
+
     }
 }

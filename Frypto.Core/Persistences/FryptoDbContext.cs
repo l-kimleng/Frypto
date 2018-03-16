@@ -13,6 +13,7 @@ namespace Frypto.Core.Persistences
         public DbSet<PaymentStatus> PaymentStatuses { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<ReservationPayment> ReservationPayments { get; set; }
+        public DbSet<TicketType> TicketTypes { get; set; }
 
         public FryptoDbContext()
             : base("DefaultConnection", false)
