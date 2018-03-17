@@ -110,7 +110,7 @@ namespace Frypto.Controllers
                     Id = model.TravelClassId,
                     Class = model.TravelClass.Class
                 },
-                TicketTypeViewModel = new TicketTypeViewModel
+                TicketType = new TicketTypeViewModel
                 {
                     Id = model.TicketTypeId,
                     Name = model.TicketType.Name
