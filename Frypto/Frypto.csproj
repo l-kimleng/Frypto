@@ -200,6 +200,10 @@
     <Compile Include="Migrations\201803160609431_SeedTicketTypeData.Designer.cs">
       <DependentUpon>201803160609431_SeedTicketTypeData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803220714051_UpdateTicketTypeIds.cs" />
+    <Compile Include="Migrations\201803220714051_UpdateTicketTypeIds.Designer.cs">
+      <DependentUpon>201803220714051_UpdateTicketTypeIds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -270,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803160609431_SeedTicketTypeData.resx">
       <DependentUpon>201803160609431_SeedTicketTypeData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803220714051_UpdateTicketTypeIds.resx">
+      <DependentUpon>201803220714051_UpdateTicketTypeIds.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
