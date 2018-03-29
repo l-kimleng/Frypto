@@ -218,6 +218,7 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AgentViewModel.cs" />
+    <Compile Include="ViewModels\ReservationStatusViewModel.cs" />
     <Compile Include="ViewModels\TicketTypeViewModel.cs" />
     <Compile Include="ViewModels\PassengerViewModel.cs" />
     <Compile Include="ViewModels\PaymentViewModel.cs" />

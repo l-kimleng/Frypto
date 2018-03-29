@@ -11,5 +11,6 @@ namespace Frypto.ViewModels
         public DateTime ReservationDate { get; set; }
         public byte NumberInParty { get; set; }
         public TicketTypeViewModel TicketType { get; set; }
+        public ReservationStatusViewModel ReservationStatus { get; set; }
     }
 }

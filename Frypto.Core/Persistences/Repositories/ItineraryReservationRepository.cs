@@ -31,7 +31,8 @@ namespace Frypto.Core.Persistences.Repositories
                 result = result.Include(x => x.Agent)
                     .Include(x => x.Passenger)
                     .Include(x => x.TravelClass)
-                    .Include(x => x.TicketType);
+                    .Include(x => x.TicketType)
+                    .Include(x => x.ReservationStatus);
             }
 
             return await result.FirstOrDefaultAsync();
@@ -51,7 +52,8 @@ namespace Frypto.Core.Persistences.Repositories
                 result = result.Include(x => x.Agent)
                     .Include(x => x.Passenger)
                     .Include(x => x.TravelClass)
-                    .Include(x => x.TicketType);
+                    .Include(x => x.TicketType)
+                    .Include(x => x.ReservationStatus);
             }
 
             return await result.ToListAsync();

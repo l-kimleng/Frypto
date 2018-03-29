@@ -72,6 +72,8 @@ namespace Frypto.Controllers
                 AgentId = model.AgentId,
                 PassengerId = model.PassengerId,
                 TravelClassId = model.TravelClassId,
+                TicketTypeId = model.TicketTypeId,
+                ReservationStatusId = model.ReservationStatusId ?? 1,
                 NumberInParty = model.NumberInParty,
                 ReservationDate = model.ReservationDate
             };
@@ -114,6 +116,11 @@ namespace Frypto.Controllers
                 {
                     Id = model.TicketTypeId,
                     Name = model.TicketType.Name
+                },
+                ReservationStatus = new ReservationStatusViewModel
+                {
+                    Id = model.ReservationStatusId,
+                    Label = model.ReservationStatus.Label
                 },
                 NumberInParty = model.NumberInParty,
                 ReservationDate = model.ReservationDate

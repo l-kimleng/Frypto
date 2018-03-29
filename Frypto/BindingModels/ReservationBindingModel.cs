@@ -15,5 +15,8 @@ namespace Frypto.BindingModels
         public DateTime ReservationDate { get; set; }
         [Required]
         public byte NumberInParty { get; set; }
+        [Required]
+        public int TicketTypeId { get; set; }
+        public int? ReservationStatusId { get; set; }
     }
 }
