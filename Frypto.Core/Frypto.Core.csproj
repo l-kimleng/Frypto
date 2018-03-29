@@ -60,6 +60,7 @@
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\PaymentStatus.cs" />
     <Compile Include="Models\ReservationPayment.cs" />
+    <Compile Include="Models\ReservationStatus.cs" />
     <Compile Include="Models\TicketType.cs" />
     <Compile Include="Models\TravelClass.cs" />
     <Compile Include="Persistences\FryptoDbContext.cs" />

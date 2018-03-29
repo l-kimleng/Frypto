@@ -25,5 +25,8 @@ namespace Frypto.Core.Models
         public int? TicketTypeId { get; set; }
         public TicketType TicketType { get; set; }
 
+        public int? ReservationStatusId { get; set; }
+        public ReservationStatus ReservationStatus { get; set; }
+
     }
 }
