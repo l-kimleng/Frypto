@@ -83,7 +83,7 @@ namespace Frypto.Providers
             IDictionary<string, string> data = new Dictionary<string, string>
             {
                 { "userName", userName },
-                { "roles", string.Join("", roles) }
+                { "roles", string.Join(",", roles) }
             };
             return new AuthenticationProperties(data);
         }
