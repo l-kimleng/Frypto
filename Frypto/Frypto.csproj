@@ -212,6 +212,10 @@
     <Compile Include="Migrations\201803290343210_SeedReservationStatusData.Designer.cs">
       <DependentUpon>201803290343210_SeedReservationStatusData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803300338005_SeedCanManagerUser.cs" />
+    <Compile Include="Migrations\201803300338005_SeedCanManagerUser.Designer.cs">
+      <DependentUpon>201803300338005_SeedCanManagerUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -293,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803290343210_SeedReservationStatusData.resx">
       <DependentUpon>201803290343210_SeedReservationStatusData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803300338005_SeedCanManagerUser.resx">
+      <DependentUpon>201803300338005_SeedCanManagerUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

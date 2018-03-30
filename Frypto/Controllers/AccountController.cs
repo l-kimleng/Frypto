@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Frypto.Core.Models;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Frypto.Controllers
 {
@@ -34,6 +35,14 @@ namespace Frypto.Controllers
             var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
 
             var result = await UserManager.CreateAsync(user, model.Password);
+
+            //if(result.Succeeded)
+            //{
+            //    var roleStore = new RoleStore<IdentityRole>(new Frypto.Core.Persistences.FryptoDbContext());
+            //    var roleManager = new RoleManager<IdentityRole>(roleStore);
+            //    await roleManager.CreateAsync(new IdentityRole("CanManageUser"));
+            //    await UserManager.AddToRoleAsync(user.Id, "CanManageUser");
+            //}
 
             if (!result.Succeeded)
             {
