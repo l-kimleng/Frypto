@@ -11,7 +11,7 @@ namespace Frypto.Providers
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
-
+        
         public ApplicationOAuthProvider(string publicClientId)
         {
             _publicClientId = publicClientId ?? throw new ArgumentNullException(nameof(publicClientId));
@@ -19,7 +19,7 @@ namespace Frypto.Providers
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
+            var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();            
 
             var user = await userManager.FindAsync(context.UserName, context.Password);
 
@@ -34,7 +34,9 @@ namespace Frypto.Providers
             var cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
                 CookieAuthenticationDefaults.AuthenticationType);
 
-            var properties = CreateProperties(user.UserName);
+            var roles = await userManager.GetRolesAsync(user.Id);
+            var properties = CreateProperties(user.UserName, roles);
+            
             var ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
@@ -76,11 +78,12 @@ namespace Frypto.Providers
             return Task.FromResult<object>(null);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName)
+        public static AuthenticationProperties CreateProperties(string userName, IList<string> roles)
         {
             IDictionary<string, string> data = new Dictionary<string, string>
             {
-                { "userName", userName }
+                { "userName", userName },
+                { "roles", string.Join("", roles) }
             };
             return new AuthenticationProperties(data);
         }
