@@ -7,6 +7,7 @@ using System.Web.Http;
 using Frypto.Core.Models;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Frypto.Utils;
 
 namespace Frypto.Controllers
 {
@@ -23,8 +24,8 @@ namespace Frypto.Controllers
 
         // POST api/Account/Register
         [HttpPost]
-        [AllowAnonymous]
-        [Route("Register")]        
+        [Route("Register")]
+        [Authorize(Roles = RoleName.CanManageUser)]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
         {
             if (!ModelState.IsValid)
