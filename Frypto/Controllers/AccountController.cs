@@ -8,6 +8,8 @@ using Frypto.Core.Models;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Frypto.Utils;
+using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.Cookies;
 
 namespace Frypto.Controllers
 {
@@ -52,6 +54,18 @@ namespace Frypto.Controllers
 
             return Ok();
         }
+
+        // POST api/Account/Logout
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("Logout")]
+        public IHttpActionResult Logout()
+        {
+            Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
+            return Ok(new { message = "Logout successful!"});
+        }
+
+        private IAuthenticationManager Authentication => Request.GetOwinContext().Authentication;
 
         private IHttpActionResult GetErrorResult(IdentityResult result)
         {
