@@ -45,7 +45,7 @@ namespace Frypto.Controllers
         }
 
         [HttpGet]
-        public async Task<IHttpActionResult> GetReservation(string query)
+        public async Task<IHttpActionResult> GetReservation([FromUri]ReservationQuery query)
         {
             var result = await ItineraryReservationRepository.GetByQuery(query);
             var list = new List<ReservationViewModel>();

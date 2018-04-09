@@ -38,13 +38,28 @@ namespace Frypto.Core.Persistences.Repositories
             return await result.FirstOrDefaultAsync();
         }
 
-        public async Task<IList<ItineraryReservation>> GetByQuery(string query, bool isInclude = true)
+        public async Task<IList<ItineraryReservation>> GetByQuery(ReservationQuery query, bool isInclude = true)
         {
             var result = _context.ItineraryReservations.AsQueryable();
 
-            if (!string.IsNullOrEmpty(query))
+            if (query != null)
             {
-               
+                // Apply filtering
+                
+                
+                // Apply ordering
+                result = query.IsSortAscending ? result.OrderBy(x => x.ReservationDate) : result.OrderByDescending(x => x.ReservationDate);
+
+                // Apply paging
+                var page = query.Page;
+                var size = query.PageSize;
+                if (page <= 0)
+                    page = 1;
+                if (size <= 0)
+                    size = 5;
+
+                result = result.Skip((page-1) * size).Take(size);
+
             }
 
             if (isInclude)

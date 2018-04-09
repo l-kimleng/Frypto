@@ -9,6 +9,6 @@ namespace Frypto.Core.Persistences.Repositories
     {
         Task Add(ItineraryReservation reservation);
         Task<ItineraryReservation> Get(int id, bool isInclude = true);
-        Task<IList<ItineraryReservation>> GetByQuery(string query, bool isInclude = true);
+        Task<IList<ItineraryReservation>> GetByQuery(ReservationQuery query, bool isInclude = true);
     }
 }
