@@ -48,15 +48,15 @@ namespace Frypto.Controllers
         public async Task<IHttpActionResult> GetReservation([FromUri]ReservationQuery query)
         {
             var result = await ItineraryReservationRepository.GetByQuery(query);
-            var list = new List<ReservationViewModel>();
+            var items = new List<ReservationViewModel>();
 
-            foreach (var reservation in result)
+            foreach (var reservation in result.Items)
             {
-                list.Add(BuildViewModel(reservation));
+                items.Add(BuildViewModel(reservation));
               
             }
 
-            return Ok(list);
+            return Ok(new {result.TotalItem, items});
         }
 
         [HttpPost]

@@ -38,17 +38,22 @@ namespace Frypto.Core.Persistences.Repositories
             return await result.FirstOrDefaultAsync();
         }
 
-        public async Task<IList<ItineraryReservation>> GetByQuery(ReservationQuery query, bool isInclude = true)
+        public async Task<QueryResult<ItineraryReservation>> GetByQuery(ReservationQuery query, bool isInclude = true)
         {
-            var result = _context.ItineraryReservations.AsQueryable();
+            var queryable = _context.ItineraryReservations.AsQueryable();
+            var result = new QueryResult<ItineraryReservation>
+            {
+                TotalItem = await queryable.CountAsync()
+            };
+
 
             if (query != null)
             {
                 // Apply filtering
-                
-                
+
+
                 // Apply ordering
-                result = query.IsSortAscending ? result.OrderBy(x => x.ReservationDate) : result.OrderByDescending(x => x.ReservationDate);
+                queryable = query.IsSortAscending ? queryable.OrderBy(x => x.ReservationDate) : queryable.OrderByDescending(x => x.ReservationDate);
 
                 // Apply paging
                 var page = query.Page;
@@ -58,20 +63,22 @@ namespace Frypto.Core.Persistences.Repositories
                 if (size <= 0)
                     size = 5;
 
-                result = result.Skip((page-1) * size).Take(size);
+                queryable = queryable.Skip((page-1) * size).Take(size);
 
             }
 
             if (isInclude)
             {
-                result = result.Include(x => x.Agent)
+                queryable = queryable.Include(x => x.Agent)
                     .Include(x => x.Passenger)
                     .Include(x => x.TravelClass)
                     .Include(x => x.TicketType)
                     .Include(x => x.ReservationStatus);
             }
+            
+            result.Items = await queryable.ToListAsync();
 
-            return await result.ToListAsync();
+            return result; 
         }
     }
 }
