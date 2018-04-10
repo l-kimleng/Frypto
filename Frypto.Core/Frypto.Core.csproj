@@ -57,6 +57,7 @@
     <Compile Include="Models\Airport.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ItineraryReservation.cs" />
+    <Compile Include="Models\Leg.cs" />
     <Compile Include="Models\Passenger.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\PaymentStatus.cs" />

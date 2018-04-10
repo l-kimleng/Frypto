@@ -16,6 +16,7 @@ namespace Frypto.Core.Persistences
         public DbSet<TicketType> TicketTypes { get; set; }
         public DbSet<ReservationStatus> ReservationStatus { get; set; }
         public DbSet<Airport> Airports { get; set; }
+        public DbSet<Leg> Legs { get; set; }
 
         public FryptoDbContext()
             : base("DefaultConnection", false)
@@ -25,6 +26,21 @@ namespace Frypto.Core.Persistences
         public static FryptoDbContext Create()
         {
             return new FryptoDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Leg>()
+                .HasRequired(x => x.OriginAirport)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Leg>()
+                .HasRequired(x => x.DestinationAirport)
+                .WithMany()
+                .WillCascadeOnDelete(false);
         }
     }
 }
