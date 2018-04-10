@@ -240,6 +240,10 @@
     <Compile Include="Migrations\201804100804335_AddFlightScheduleModel.Designer.cs">
       <DependentUpon>201804100804335_AddFlightScheduleModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804100810026_SeedFlightScheduleData.cs" />
+    <Compile Include="Migrations\201804100810026_SeedFlightScheduleData.Designer.cs">
+      <DependentUpon>201804100810026_SeedFlightScheduleData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -343,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804100804335_AddFlightScheduleModel.resx">
       <DependentUpon>201804100804335_AddFlightScheduleModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804100810026_SeedFlightScheduleData.resx">
+      <DependentUpon>201804100810026_SeedFlightScheduleData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
