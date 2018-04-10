@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201804100912289_AddFlightCostModel.Designer.cs">
       <DependentUpon>201804100912289_AddFlightCostModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804100929256_SeedFlightCostData.cs" />
+    <Compile Include="Migrations\201804100929256_SeedFlightCostData.Designer.cs">
+      <DependentUpon>201804100929256_SeedFlightCostData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -357,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804100912289_AddFlightCostModel.resx">
       <DependentUpon>201804100912289_AddFlightCostModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804100929256_SeedFlightCostData.resx">
+      <DependentUpon>201804100929256_SeedFlightCostData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
