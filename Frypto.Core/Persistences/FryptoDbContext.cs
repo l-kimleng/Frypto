@@ -15,6 +15,7 @@ namespace Frypto.Core.Persistences
         public DbSet<ReservationPayment> ReservationPayments { get; set; }
         public DbSet<TicketType> TicketTypes { get; set; }
         public DbSet<ReservationStatus> ReservationStatus { get; set; }
+        public DbSet<Airport> Airports { get; set; }
 
         public FryptoDbContext()
             : base("DefaultConnection", false)
