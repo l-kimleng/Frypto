@@ -18,6 +18,7 @@ namespace Frypto.Core.Persistences
         public DbSet<Airport> Airports { get; set; }
         public DbSet<Leg> Legs { get; set; }
         public DbSet<FlightSchedule> FlightSchedules { get; set; }
+        public DbSet<FlightCost> FlightCosts { get; set; }
 
         public FryptoDbContext()
             : base("DefaultConnection", false)
@@ -52,6 +53,10 @@ namespace Frypto.Core.Persistences
                 .HasRequired(x => x.DestinationAirport)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<FlightCost>()
+                .HasKey(x => new {x.FlightNumber, x.ValidFrom});
+
         }
     }
 }
