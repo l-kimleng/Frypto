@@ -232,6 +232,10 @@
     <Compile Include="Migrations\201804100448138_AddLegModel.Designer.cs">
       <DependentUpon>201804100448138_AddLegModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804100502444_SeedLegData.cs" />
+    <Compile Include="Migrations\201804100502444_SeedLegData.Designer.cs">
+      <DependentUpon>201804100502444_SeedLegData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -329,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804100448138_AddLegModel.resx">
       <DependentUpon>201804100448138_AddLegModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804100502444_SeedLegData.resx">
+      <DependentUpon>201804100502444_SeedLegData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
