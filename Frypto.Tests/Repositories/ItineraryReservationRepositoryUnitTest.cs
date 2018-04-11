@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Frypto.Core.Models;
 using Frypto.Core.Persistences;
 using Frypto.Core.Persistences.Repositories;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Frypto.Tests.Repositories
 {
-    [TestClass]
+    [TestFixture]
     public class ItineraryReservationRepositoryUnitTest
     {
-        private FryptoDbContext Context { get; }
+        private FryptoDbContext Context { get; set; }
         
-        public ItineraryReservationRepositoryUnitTest()
+        [SetUp]
+        public void Setup()
         {
             Context = FryptoDbContext.Create();
         }
@@ -29,8 +31,8 @@ namespace Frypto.Tests.Repositories
                 return _itineraryReservationRepository;
             }
         }
-        [TestMethod]
-        public void ItineraryReservation_Add_ReservationId_MustLargerThenZero()
+        [Test]
+        public async Task ItineraryReservation_Add_ReservationId_MustLargerThenZero()
         {
             var reservation = new ItineraryReservation
             {
@@ -41,10 +43,18 @@ namespace Frypto.Tests.Repositories
                 NumberInParty = 3
             };
 
-            _itineraryReservationRepository.Add(reservation);
-            Context.SaveChanges();
+            await ItineraryReservationRepository.Add(reservation);
+            //Context.SaveChanges();
 
-            Assert.IsTrue(reservation.Id > 0);
+            Assert.That(reservation.Id > 0);
+        }
+
+        [Test]
+        public async Task ItineraryReservation_Get_ReservationById_MustLargerThenZero()
+        {
+            var reservation = await ItineraryReservationRepository.Get(1, false);
+
+            Assert.That(reservation.Id > 0);
         }
     }
 }
