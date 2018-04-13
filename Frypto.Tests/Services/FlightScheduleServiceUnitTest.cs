@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Frypto.Core.Persistences;
 using Frypto.Core.Persistences.Repositories;
+using Frypto.Core.Services;
 using NUnit.Framework;
 
-namespace Frypto.Tests.Repositories
+namespace Frypto.Tests.Services
 {
     [TestFixture]
-    public class FlightScheduleManagerUnitTest
+    public class FlightScheduleServiceUnitTest
     {
         private FryptoDbContext Context { get; set; }
 
@@ -62,22 +60,22 @@ namespace Frypto.Tests.Repositories
             }
         }
 
-        private IFlightScheduleManager _flightManager;
+        private IFlightScheduleService _flightService;
 
-        public IFlightScheduleManager FlightManager
+        public IFlightScheduleService FlightService
         {
             get
             {
-                if (_flightManager == null)
+                if (_flightService == null)
                 {
-                    return _flightManager =
-                        new FlightScheduleManager(LegRepository, FlightScheduleRepository, FlightCostRepository);
+                    return _flightService =
+                        new FlightScheduleService(LegRepository, FlightScheduleRepository, FlightCostRepository);
                 }
-                return _flightManager;
+                return _flightService;
             }
         }
         [Test]
-        public async Task FlightManger_GetScheduleDetail_ScheduleIsExisted()
+        public async Task FlightService_GetScheduleDetail_ScheduleIsExisted()
         {
             // Arrange
             const int originId = 9;
@@ -85,7 +83,7 @@ namespace Frypto.Tests.Repositories
             var departureDate = DateTime.Parse("10/25/2018");
 
             // Act
-            var schedules = await FlightManager.GetBy(originId, destinationId, departureDate);
+            var schedules = await FlightService.GetBy(originId, destinationId, departureDate);
 
             // Assert
             Assert.That(schedules.Count == 1);

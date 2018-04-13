@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Frypto.Core.Models;
+using Frypto.Core.Persistences;
 using Frypto.Core.Persistences.Repositories;
 
-namespace Frypto.Core.Persistences
+namespace Frypto.Core.Services
 {
-    public class FlightScheduleManager : IFlightScheduleManager
+    public class FlightScheduleService : IFlightScheduleService
     {
         private readonly ILegRepository _legRepository;
         private readonly IFlightScheduleRepository _flightScheduleRepository;
         private readonly IFlightCostRepository _flightCostRepository;
 
-        public FlightScheduleManager(ILegRepository legRepository, IFlightScheduleRepository flightScheduleRepository,
+        public FlightScheduleService(ILegRepository legRepository, IFlightScheduleRepository flightScheduleRepository,
             IFlightCostRepository flightCostRepository)
         {
             _legRepository = legRepository;

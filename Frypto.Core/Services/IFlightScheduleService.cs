@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Frypto.Core.Models;
 
-namespace Frypto.Core.Persistences
+namespace Frypto.Core.Services
 {
-    public interface IFlightScheduleManager
+    public interface IFlightScheduleService
     {
         Task<IList<FlightDetailedSchedule>> GetBy(int originAirportId, int destinationAirportId, DateTime departureDate);
     }
