@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AirportRepositoryUnitTest.cs" />
     <Compile Include="Repositories\ItineraryReservationRepositoryUnitTest.cs" />
     <Compile Include="Services\FlightScheduleServiceUnitTest.cs" />
   </ItemGroup>

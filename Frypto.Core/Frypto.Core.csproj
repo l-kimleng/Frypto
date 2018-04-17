@@ -71,8 +71,10 @@
     <Compile Include="Models\TicketType.cs" />
     <Compile Include="Models\TravelClass.cs" />
     <Compile Include="Persistences\FryptoDbContext.cs" />
+    <Compile Include="Persistences\Repositories\AirportRepository.cs" />
     <Compile Include="Persistences\Repositories\FlightCostRepository.cs" />
     <Compile Include="Persistences\Repositories\FlightScheduleRepository.cs" />
+    <Compile Include="Persistences\Repositories\IAirportRepository.cs" />
     <Compile Include="Persistences\Repositories\IFlightCostRepository.cs" />
     <Compile Include="Persistences\Repositories\IFlightScheduleRepository.cs" />
     <Compile Include="Persistences\Repositories\IItineraryReservationRepository.cs" />
