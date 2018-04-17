@@ -135,6 +135,7 @@
     <Compile Include="BindingModels\ReservationBindingModel.cs" />
     <Compile Include="BindingModels\ReservationPaymentBindingModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AirportsController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Global.asax.cs">
