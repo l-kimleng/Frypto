@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Frypto.BindingModels;
 using Frypto.Core.Models;
 using Frypto.Core.Persistences;
 using Frypto.Core.Persistences.Repositories;
@@ -43,14 +44,15 @@ namespace Frypto.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IHttpActionResult> GetAirport([FromUri]string code)
+        public async Task<IHttpActionResult> GetAirport([FromUri]AirportBindingModel model)
         {
-            if (string.IsNullOrEmpty(code) || code.ToCharArray().Length > 3) return BadRequest(code);
+            if (string.IsNullOrEmpty(model.Code) || model.Code.ToCharArray().Length > 3) return BadRequest(model.Code);
 
             var query = new AirportQuery()
             {
-                Code = code,
-                Name = ""
+                Code = model.Code,
+                Name = model.Name,
+                Location = model.Location
             };
 
             var airports = await AirportRepository.Get(query);

@@ -20,14 +20,21 @@ namespace Frypto.Core.Persistences.Repositories
 
         public async Task<IList<Airport>> Get(AirportQuery query)
         {
-            var result = _context.Airports.Where(x => x.Code.StartsWith(query.Code));
-            
+            var result = new List<Airport>();
+
+            if (!string.IsNullOrEmpty(query.Code))
+            {
+                var listByCode = await _context.Airports.Where(x => x.Code.StartsWith(query.Code)).ToListAsync();
+                result.AddRange(listByCode);
+            }    
+                
             if (!string.IsNullOrEmpty(query.Name))
             {
-                result = _context.Airports.Where(x => x.Location.Contains(query.Name));
+                var listByName = await _context.Airports.Where(x => x.Location.Contains(query.Name)).ToListAsync();
+                result.AddRange(listByName);
             }
 
-            return await result.ToListAsync();
+            return result;
         }
     }
 }
