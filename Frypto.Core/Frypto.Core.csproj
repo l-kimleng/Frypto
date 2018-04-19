@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Models\Agent.cs" />
     <Compile Include="Models\Airport.cs" />
+    <Compile Include="Models\AirportQuery.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\FlightCost.cs" />
     <Compile Include="Models\FlightDetailedSchedule.cs" />

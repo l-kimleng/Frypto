@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Frypto.Core.Models;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 
 namespace Frypto.Core.Persistences.Repositories
 {
@@ -17,9 +18,16 @@ namespace Frypto.Core.Persistences.Repositories
             _context = context;
         }
 
-        public async Task<IList<Airport>> Get(string code)
+        public async Task<IList<Airport>> Get(AirportQuery query)
         {
-            return await _context.Airports.Where(x => x.Code.StartsWith(code)).ToListAsync();
+            var result = _context.Airports.Where(x => x.Code.StartsWith(query.Code));
+            
+            if (!string.IsNullOrEmpty(query.Name))
+            {
+                result = _context.Airports.Where(x => x.Location.Contains(query.Name));
+            }
+
+            return await result.ToListAsync();
         }
     }
 }

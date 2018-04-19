@@ -9,6 +9,6 @@ namespace Frypto.Core.Persistences.Repositories
 {
     public interface IAirportRepository
     {
-        Task<IList<Airport>> Get(string code);
+        Task<IList<Airport>> Get(AirportQuery query);
     }
 }

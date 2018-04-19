@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Frypto.Core.Models;
 
 namespace Frypto.Tests.Repositories
 {
@@ -38,10 +39,14 @@ namespace Frypto.Tests.Repositories
         public async Task AirportRepository_GetByCode_MustExisted()
         {
             // Arrange
-            const string code = "AD";
+            var airportQuery = new AirportQuery
+            {
+                Code = "AD",
+                Name = ""
+            };
 
             // Act
-            var result = await AirportRepository.Get(code);
+            var result = await AirportRepository.Get(airportQuery);
 
             // Assert
 

@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Frypto.Core.Models;
 using Frypto.Core.Persistences;
 using Frypto.Core.Persistences.Repositories;
 
@@ -46,7 +47,13 @@ namespace Frypto.Controllers
         {
             if (string.IsNullOrEmpty(code) || code.ToCharArray().Length > 3) return BadRequest(code);
 
-            var airports = await AirportRepository.Get(code);
+            var query = new AirportQuery()
+            {
+                Code = code,
+                Name = ""
+            };
+
+            var airports = await AirportRepository.Get(query);
 
             if (!airports.Any()) return NotFound();
 
