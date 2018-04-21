@@ -46,8 +46,6 @@ namespace Frypto.Controllers
         [AllowAnonymous]
         public async Task<IHttpActionResult> GetAirport([FromUri]AirportBindingModel model)
         {
-            if (string.IsNullOrEmpty(model.Code) || model.Code.ToCharArray().Length > 3) return BadRequest(model.Code);
-
             var query = new AirportQuery()
             {
                 Code = model.Code,

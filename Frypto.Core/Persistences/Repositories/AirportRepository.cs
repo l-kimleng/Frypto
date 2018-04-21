@@ -30,8 +30,27 @@ namespace Frypto.Core.Persistences.Repositories
                 
             if (!string.IsNullOrEmpty(query.Name))
             {
-                var listByName = await _context.Airports.Where(x => x.Location.Contains(query.Name)).ToListAsync();
-                result.AddRange(listByName);
+                var listByName = await _context.Airports.Where(x => x.Name.Contains(query.Name)).ToListAsync();
+                foreach (var airport in listByName)
+                {
+                    if (result.Any(x => x.Id != airport.Id))
+                    {
+                        result.Add(airport);
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(query.Location))
+            {
+                var listByLocation = await _context.Airports.Where(x => x.Location.Contains(query.Location))
+                    .ToListAsync();
+                foreach (var airport in listByLocation)
+                {
+                    if (result.Any(x => x.Id != airport.Id))
+                    {
+                        result.Add(airport);
+                    }
+                }
             }
 
             return result;
