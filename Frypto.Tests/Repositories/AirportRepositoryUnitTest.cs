@@ -41,8 +41,9 @@ namespace Frypto.Tests.Repositories
             // Arrange
             var airportQuery = new AirportQuery
             {
-                Code = "AD",
-                Name = ""
+                Code = "PNH",
+                Name = "Phnom Penh",
+                Location = "Cambodia"
             };
 
             // Act
