@@ -22,6 +22,10 @@ namespace Frypto.Core.Persistences.Repositories
         {
             var result = new List<Airport>();
 
+            if (string.IsNullOrEmpty(query.Code) && string.IsNullOrEmpty(query.Name)
+                && string.IsNullOrEmpty(query.Location))
+                    return await _context.Airports.ToListAsync();
+
             if (!string.IsNullOrEmpty(query.Code))
             {
                 var listByCode = await _context.Airports.Where(x => x.Code.StartsWith(query.Code)).ToListAsync();
